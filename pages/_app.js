@@ -1,8 +1,8 @@
 // pages/_app.js
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
-
+import { Container } from '@material-ui/core'
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
@@ -22,8 +22,10 @@ export default class MyApp extends App {
         <Head>
           <title>My new cool app</title>
         </Head>
+       
         <Component {...pageProps} />
-      </Container>
+        </Container>
+      
     )
   }
 }

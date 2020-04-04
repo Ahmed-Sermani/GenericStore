@@ -10,10 +10,11 @@ app
     .prepare()
     .then(() => {
         const server = express();
+        
         const api = require("./routes/index.js");
 
         server.use("/api", api(server));
-
+        
         server.get("*", (req, res) => {
             return handle(req, res);
         });
